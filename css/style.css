@@ -424,65 +424,226 @@ header img {
 
 /* ADAPTATION MOBILE */
 
+/* ADAPTATION DU HEADER */
+@media (max-width: 768px) {
+    header {
+        width: 60%;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 20px;
+        margin-bottom: 0px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .nav li {
+        font-size: 16px;
+    }
+
+    .nav li a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
 /* 📌 ADAPTATION DE LA SECTION WELCOME */
 @media (max-width: 768px) {
     .landing-page {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; /* ✅ Centre le contenu verticalement */
+        justify-content: flex-start;
         text-align: center;
         width: 90%;
-        min-height: calc(100dvh + 150px); /* ✅ Augmente la hauteur pour plus d'espace */
-        height: auto;
-        padding: 20px;
-        position: relative; /* ✅ S'assure qu'elle s'adapte bien */
+        min-height: 100dvh;
+        padding: 10px 20px;
+        margin-top: 100px;
     }
 
-    /* 📌 IMAGE DE PROFIL (AFFICHÉE ET RONDE EN MOBILE) */
+    /* IMAGE DE PROFIL (SUPPRIMÉE EN MOBILE) */
     .profile-photo {
-        display: block;
-        width: 120px; /* ✅ Augmente la taille */
-        height: 120px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin: 30px auto;
+        display: none;
     }
 
-    .profile-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* 📌 TITRES */
+    /* TITRES */
     .big-title {
-        font-size: 28px; /* ✅ Augmente la taille */
+        font-size: 24px;
         max-width: 100%;
-        margin-top: 50px; /* ✅ Ajoute de l'espace */
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .little-title {
+        font-size: 16px;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* BOUTON SCROLL */
+    .discover-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-top: 20px;
+    }
+}
+
+/* ADAPTATION DES BOUTONS */
+@media (max-width: 768px) {
+    .discover-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-top: 20px;
+    }
+}
+
+/* ADAPTATION DE LA SECTION "SIDE PROJECTS" */
+@media (max-width: 768px) {
+    .side-projects {
+        height: auto;
+        padding: 60px 5%;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    /* AUGMENTATION DES BOXES POUR MIEUX POSITIONNER LE BOUTON */
+    .project-box {
+        width: 90%;
+        height: auto;
+        padding-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* TAILLE DE L'IMAGE DANS LES BOXES */
+    .project-box img {
+        height: 180px;
+    }
+
+    /* POSITIONNEMENT DU BOUTON "DÉCOUVRIR" */
+    .project-box .discover-btn {
+        position: relative;
+        margin-top: 15px;
+        align-self: center;
+    }
+}
+
+/* ADAPTATION DU FOOTER */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 5%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .owner {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .contact-section {
+        margin-bottom: 15px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .social-icon {
+        font-size: 18px;
+    }
+}
+
+/* CHANGEMENT DU LOGO EN MODE MOBILE */
+@media (max-width: 768px) {
+    .logo {
+        width: 150px !important;
+        height: 160px;
+    }
+}
+
+/* ADAPTATION DE L'IMAGE DE PROFIL : CENTRÉE EN BAS */
+@media (max-width: 768px) {
+    .big-title {
         margin-bottom: 30px;
     }
 
     .little-title {
-        font-size: 18px; /* ✅ Augmente légèrement la taille */
-        max-width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
-    /* 📌 BOUTON SCROLL */
     .discover-btn {
-        font-size: 18px; /* ✅ Rend le bouton plus grand */
-        padding: 12px 24px;
-        margin-top: 30px;
+        margin-top: 10px;
     }
 }
+
+/* ADAPTATION DES BOXES POUR ÉVITER LE CHEVAUCHEMENT */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .project-box {
+        width: 90%;
+        height: auto;
+        padding: 40px;
+        min-height: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .project-box img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .project-box h3 {
+        font-size: 24px;
+        margin-top: 15px;
+    }
+
+    .project-box p {
+        font-size: 18px;
+        padding: 0 15px;
+        flex-grow: 1;
+    }
+
+    .project-box .discover-btn {
+        position: relative;
+        bottom: 0;
+        width: 80%;
+        padding: 12px 20px;
+        margin-top: auto;
+    }
+}
+
+
 
 /* 📌 ADAPTATION SPÉCIALE POUR IPHONE 16 PRO ET DYNAMIC ISLAND */
 @media (max-width: 768px) {
     .landing-page {
-        min-height: calc(100dvh + 50px); /* ✅ Augmente la hauteur pour bien couvrir l'écran */
-        padding-top: env(safe-area-inset-top); /* ✅ S'assure que le fond va sous la Dynamic Island */
-        padding-bottom: env(safe-area-inset-bottom); /* ✅ Empêche le contenu d'être caché sous la Touch Bar */
+        min-height: 100dvh; /* ✅ Utilisation de `100dvh` au lieu de `100vh` */
+        padding-top: env(safe-area-inset-top); /* ✅ Ajoute du padding pour Dynamic Island */
+        padding-bottom: env(safe-area-inset-bottom); /* ✅ Ajuste pour la Touch Bar */
     }
 
     body {
@@ -490,6 +651,6 @@ header img {
         margin: 0;
         padding: 0;
         overflow-x: hidden;
-        background-color: #f8f8f8;
+        background-color: #f8f8f8; /* ✅ Ajuste pour éviter les bordures blanches */
     }
 }
