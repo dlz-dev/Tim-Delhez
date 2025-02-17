@@ -433,7 +433,7 @@ header img {
         justify-content: center; /* ✅ Centre le contenu verticalement */
         text-align: center;
         width: 90%;
-        min-height: calc(100dvh + 50px); /* ✅ Augmente la hauteur pour plus d'espace */
+        min-height: calc(100dvh + 150px); /* ✅ Augmente la hauteur pour plus d'espace */
         height: auto;
         padding: 20px;
         position: relative; /* ✅ S'assure qu'elle s'adapte bien */
