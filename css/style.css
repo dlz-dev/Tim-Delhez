@@ -427,13 +427,17 @@ header img {
 /* ADAPTATION DU HEADER */
 @media (max-width: 768px) {
     header {
-        position: fixed;
-        top: 0;
-        width: 60%;
+        position: fixed; /* ✅ Garde le header fixé en haut */
+        top: 5px; /* ✅ Ajoute un léger espace avec le bord supérieur */
+        left: 50%; /* ✅ Centre le header */
+        transform: translateX(-50%); /* ✅ Centre précisément le header */
+        width: 60%; /* ✅ Conserve la largeur d'origine */
         flex-direction: column;
         text-align: center;
-        padding: 10px 20px;
+        padding: 5px 20px; /* ✅ Réduit l’espace autour pour éviter un effet trop large */
         margin-bottom: 0px;
+        z-index: 1000; /* ✅ S'assure qu'il reste visible au-dessus du reste */
+        background-color: rgba(255, 255, 255, 0.9); /* ✅ Facultatif : Ajoute un fond pour éviter qu’il soit invisible */
     }
 
     .nav {
