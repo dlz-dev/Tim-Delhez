@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim Delhez - Portefolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .profile-photo {
+            position: absolute;
+            top: 15px; /* Ajuste cette valeur pour l'aligner verticalement avec le texte */
+            right: 20px; /* Espace par rapport au bord droit */
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <section id="home" class="top-page">
+
+        <header>
+            <img src="img/logo.jpg" alt="Logo du site">
+            <nav class="nav">
+                <li><a href="#home">About</a></li>
+                <li><a href="#side-projects">Side Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </nav>
+        </header>
+        
+
+        <div class="landing-page">
+            <h1 class="big-title">Tim Delhez</h1>
+            <h2 class="little-title">I am Tim Delhez, a first-year computer science student specializing in artificial intelligence at HELMo (Guillemin campus, Liège). Passionate about new technologies, I am developing my skills in programming and AI through my studies and various personal projects. My goal is to explore and create innovative solutions that combine artificial intelligence and web development.</h2>
+            
+            <!-- ✅ Photo de profil en rond -->
+            <div class="profile-photo">
+                <img src="img/IMG_8227.jpg" alt="Profile Photo">
+            </div>           
+
+            <!-- ✅ Bouton "Scroll" ajouté -->
+            <button class="discover-btn" onclick="scrollToNextSection()">Scroll ↓</button>
+
+        </div>        
+    </section>
+
+
+
+<!-- Section SideProject -->
+
+    <section id="side-projects" class="side-projects">
+        <h2 class="section-title">Side Projects</h2>
+        <div class="projects-container">
+            <a href="project1.html" class="project-box">
+                <img src="img/a-venir-photo.png" alt="Project 1"> <!-- ✅ Image du projet -->
+                <h3>Project 1</h3>
+                <p>This project...</p>
+                <button class="discover-btn">Découvrir</button>
+            </a>
+            <a href="project2.html" class="project-box">
+                <img src="img/a-venir-photo.png" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>This project...</p>
+                <button class="discover-btn">Découvrir</button>
+            </a>
+            <a href="project3.html" class="project-box">
+                <img src="img/a-venir-photo.png" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>This project...</p>
+                <button class="discover-btn">Découvrir</button>
+            </a>
+        </div>
+    </section>
+
+
+
+
+    
+
+    
+    <script>
+        function scrollToNextSection() {
+            window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+        }
+    </script>
+
+
+<script>
+    // Détecte si une box est visible à l'écran
+    function revealProjects() {
+        let boxes = document.querySelectorAll('.project-box');
+        let windowHeight = window.innerHeight;
+        
+        boxes.forEach(box => {
+            let boxTop = box.getBoundingClientRect().top;
+            if (boxTop < windowHeight - 50) {
+                box.classList.add('visible');
+            }
+        });
+    }
+
+    // Exécute la fonction au scroll
+    window.addEventListener('scroll', revealProjects);
+    revealProjects();
+</script>
+
+
+<footer id="contact" class="footer">
+    <div class="footer-content">
+        
+        <!-- Nom Tim Delhez à gauche -->
+        <p class="owner">Tim Delhez</p>
+
+        <!-- Section Contact -->
+        <div class="contact-section">
+            <p class="contact-title">📩 Contactez-moi</p>
+            <div class="social-links">
+                <a href="#" class="social-icon" onclick="alert('Ajoute-moi sur Discord : agentk21');">
+                    <img src="img/Fichier 90.png" alt="Discord">
+                    <span>Discord</span>
+                </a>                
+                <a href="mailto:dev@dlzteam.com" class="social-icon">
+                    <img src="img/Fichier 91.png" alt="Email">
+                    <span>Email</span>
+                </a>
+                <a href="https://github.com/dlz-dev" target="_blank" class="social-icon">
+                    <img src="img/Fichier 89.png" alt="GitHub">
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Mention légale en bas centré -->
+    <p class="rights">© 2025 Tous droits réservés - <strong>DLZTEAM.COM</strong></p>
+</footer>
+
+
+
+<script>
+    // Vérifie que tous les liens du menu permettent un scroll fluide
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+            e.preventDefault();
+            
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 50, // ✅ Décale légèrement pour éviter que le header masque la section
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>
+
