@@ -64,13 +64,18 @@ header img {
 
 /* Conteneur global aligné avec le header */
 .landing-page {
-    position: absolute;
-    left: 50%;
-    top: 35%;
-    transform: translateX(-50%);
-    width: 60%; /* Même largeur que le header */
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    min-height: 130vh;
+    padding: 100px 20px;
+    margin: 0 auto;
+    position: relative;
 }
+
 
 /* Titre principal */
 .big-title {
@@ -452,12 +457,13 @@ header img {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: center; /* ✅ Centrage vertical pour éviter les chevauchements */
         text-align: center;
         width: 90%;
-        min-height: 120vh; /* ✅ Ajustement dynamique pour s’adapter aux écrans */
-        padding: 80px 20px;
+        min-height: 150vh; /* ✅ Augmentation pour garantir l'affichage correct */
+        padding: 100px 20px;
         margin: 0 auto;
+        position: relative;
     }
 
     /* IMAGE DE PROFIL (SUPPRIMÉE EN MOBILE) */
@@ -467,23 +473,23 @@ header img {
 
     /* TITRES */
     .big-title {
-        font-size: 28px;
+        font-size: 30px;
         font-weight: bold;
         max-width: 90%;
-        margin: 30px 0;
+        margin: 40px 0;
     }
 
     .little-title {
-        font-size: 20px;
+        font-size: 22px;
         max-width: 90%;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
     /* BOUTON SCROLL - AJUSTEMENT UNIVERSEL */
     .discover-btn {
-        font-size: 18px;
-        padding: 14px 28px;
-        margin-top: 50px;
+        font-size: 20px;
+        padding: 16px 32px;
+        margin-top: 80px;
         border-radius: 8px;
         position: relative;
         z-index: 2;
@@ -494,20 +500,20 @@ header img {
 @media (max-width: 1024px) {
     .side-projects {
         height: auto;
-        padding: 100px 5% 80px;
+        padding: 120px 5% 100px;
     }
 
     .projects-container {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 50px;
     }
 
     .project-box {
         width: 90%;
         height: auto;
-        padding: 50px;
-        min-height: 600px;
+        padding: 60px;
+        min-height: 650px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -515,7 +521,7 @@ header img {
 
     .project-box img {
         width: 100%;
-        height: 280px;
+        height: 300px;
         object-fit: cover;
         border-radius: 10px;
     }
@@ -524,7 +530,7 @@ header img {
 /* ✅ ADAPTATION DU FOOTER */
 @media (max-width: 1024px) {
     .footer {
-        padding: 50px 5%;
+        padding: 60px 5%;
     }
 
     .footer-content {
@@ -533,19 +539,19 @@ header img {
     }
 
     .owner {
-        font-size: 18px;
-        margin-bottom: 15px;
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 
     .contact-section {
-        margin-bottom: 20px;
+        margin-bottom: 25px;
     }
 }
 
 /* ✅ ADAPTATION SPÉCIALE POUR IPHONES, TABLETTES ET NOTCH */
 @media (max-width: 1024px) {
     .landing-page {
-        min-height: calc(120vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        min-height: calc(150vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
         padding-top: env(safe-area-inset-top);
         padding-bottom: env(safe-area-inset-bottom);
     }
