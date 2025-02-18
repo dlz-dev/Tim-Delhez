@@ -452,11 +452,11 @@ header img {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start; /* ✅ Alignement en haut pour éviter le chevauchement */
         text-align: center;
         width: 90%;
-        min-height: 100dvh;
-        padding: 20px;
+        min-height: 130dvh; /* ✅ Augmentation de la hauteur minimale */
+        padding: 40px 20px;
         margin: 0 auto;
     }
 
@@ -470,21 +470,24 @@ header img {
         font-size: 26px;
         font-weight: bold;
         max-width: 90%;
-        margin: 20px 0;
+        margin: 40px 0;
     }
 
     .little-title {
         font-size: 18px;
         max-width: 90%;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 
-    /* BOUTON SCROLL */
+    /* BOUTON SCROLL - ESPACEMENT FIXÉ */
     .discover-btn {
         font-size: 16px;
         padding: 12px 25px;
-        margin-top: 15px;
+        margin-top: 50px; /* ✅ Augmentation de l'espace au-dessus */
+        margin-bottom: 60px; /* ✅ Plus d’espace sous le bouton */
         border-radius: 8px;
+        position: relative;
+        z-index: 2; /* ✅ Assure qu'il reste au-dessus sans chevaucher d'autres éléments */
     }
 }
 
@@ -492,20 +495,20 @@ header img {
 @media (max-width: 768px) {
     .side-projects {
         height: auto;
-        padding: 60px 5%;
+        padding: 100px 5% 80px; /* ✅ Ajout d'un padding supplémentaire */
     }
 
     .projects-container {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 40px;
     }
 
     .project-box {
         width: 90%;
         height: auto;
-        padding: 40px;
-        min-height: 550px;
+        padding: 50px;
+        min-height: 600px; /* ✅ Augmentation de la hauteur minimale */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -513,7 +516,7 @@ header img {
 
     .project-box img {
         width: 100%;
-        height: 250px;
+        height: 280px; /* ✅ Augmentation de la taille de l'image */
         object-fit: cover;
         border-radius: 10px;
     }
@@ -522,7 +525,7 @@ header img {
 /* ✅ ADAPTATION DU FOOTER */
 @media (max-width: 768px) {
     .footer {
-        padding: 40px 5%;
+        padding: 50px 5%;
     }
 
     .footer-content {
@@ -532,24 +535,24 @@ header img {
 
     .owner {
         font-size: 18px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     .contact-section {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 }
 
 /* ✅ ADAPTATION SPÉCIALE POUR IPHONE ET NOTCH */
 @media (max-width: 768px) {
     .landing-page {
-        min-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        min-height: calc(130dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
         padding-top: env(safe-area-inset-top);
         padding-bottom: env(safe-area-inset-bottom);
     }
 
     body {
-        height: 100dvh;
+        height: 130dvh;
         margin: 0;
         padding: 0;
         overflow-x: hidden;
