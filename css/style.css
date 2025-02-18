@@ -444,7 +444,7 @@ header img {
         gap: 15px;
         text-align: center;
         margin-top: 20px;
-        width: 80%; /* ✅ Réduction de la largeur du menu pour éviter qu'il prenne toute la largeur */
+        width: 70%; /* ✅ Réduction supplémentaire de la largeur du menu */
         margin-left: auto;
         margin-right: auto;
     }
@@ -460,11 +460,11 @@ header img {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; /* ✅ Modification pour démarrer sous le menu */
+        justify-content: flex-start; /* ✅ Démarrage sous le nav */
         text-align: center;
         width: 90%;
-        min-height: 100vh;
-        padding: 70px 20px 20px; /* ✅ Ajoute un espace sous le menu */
+        min-height: 90vh; /* ✅ Réduction de la hauteur excessive */
+        padding: 80px 20px 20px; /* ✅ Ajoute un espace de 50px sous le menu */
         margin: 0 auto;
         position: relative;
     }
@@ -476,24 +476,24 @@ header img {
 
     /* TITRES */
     .big-title {
-        font-size: 30px;
+        font-size: 28px;
         font-weight: bold;
         max-width: 90%;
-        margin: 50px 0 20px; /* ✅ Ajoute 50px d'espace sous le menu */
+        margin: 50px auto 20px; /* ✅ Ajoute 50px d'espace sous le menu */
     }
 
     .little-title {
-        font-size: 22px;
+        font-size: 20px;
         max-width: 90%;
         margin-bottom: 30px;
     }
 
     /* BOUTON SCROLL - DESCENDU EN BAS */
     .discover-btn {
-        font-size: 20px;
-        padding: 16px 32px;
+        font-size: 18px;
+        padding: 14px 28px;
         margin-top: auto;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
         border-radius: 8px;
         position: relative;
         z-index: 2;
@@ -555,7 +555,7 @@ header img {
 /* ✅ ADAPTATION SPÉCIALE POUR IPHONES, TABLETTES ET NOTCH */
 @media (max-width: 1024px) {
     .landing-page {
-        min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        min-height: calc(90vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
         padding-top: env(safe-area-inset-top);
         padding-bottom: env(safe-area-inset-bottom);
     }
@@ -568,6 +568,3 @@ header img {
         background-color: #f8f8f8;
     }
 }
-
-
-
