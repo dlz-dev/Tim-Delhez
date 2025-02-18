@@ -455,8 +455,8 @@ header img {
         justify-content: flex-start; /* ✅ Alignement en haut pour éviter le chevauchement */
         text-align: center;
         width: 90%;
-        min-height: 130dvh; /* ✅ Augmentation de la hauteur minimale */
-        padding: 40px 20px;
+        min-height: 180dvh; /* ✅ Augmentation significative de la hauteur */
+        padding: 60px 20px;
         margin: 0 auto;
     }
 
@@ -467,27 +467,26 @@ header img {
 
     /* TITRES */
     .big-title {
-        font-size: 26px;
+        font-size: 28px;
         font-weight: bold;
         max-width: 90%;
-        margin: 40px 0;
+        margin: 50px 0;
     }
 
     .little-title {
-        font-size: 18px;
+        font-size: 20px;
         max-width: 90%;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
-    /* BOUTON SCROLL - ESPACEMENT FIXÉ */
+    /* BOUTON SCROLL - BIEN POSITIONNÉ SUR LA LANDING PAGE */
     .discover-btn {
-        font-size: 16px;
-        padding: 12px 25px;
-        margin-top: 50px; /* ✅ Augmentation de l'espace au-dessus */
-        margin-bottom: 60px; /* ✅ Plus d’espace sous le bouton */
+        font-size: 18px;
+        padding: 14px 30px;
+        margin-top: 100px; /* ✅ Augmentation de l'espace pour éviter qu'il se retrouve trop bas */
         border-radius: 8px;
         position: relative;
-        z-index: 2; /* ✅ Assure qu'il reste au-dessus sans chevaucher d'autres éléments */
+        z-index: 2;
     }
 }
 
@@ -495,20 +494,20 @@ header img {
 @media (max-width: 768px) {
     .side-projects {
         height: auto;
-        padding: 100px 5% 80px; /* ✅ Ajout d'un padding supplémentaire */
+        padding: 100px 5% 80px;
     }
 
     .projects-container {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 50px;
     }
 
     .project-box {
         width: 90%;
         height: auto;
         padding: 50px;
-        min-height: 600px; /* ✅ Augmentation de la hauteur minimale */
+        min-height: 600px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -516,7 +515,7 @@ header img {
 
     .project-box img {
         width: 100%;
-        height: 280px; /* ✅ Augmentation de la taille de l'image */
+        height: 280px;
         object-fit: cover;
         border-radius: 10px;
     }
@@ -546,16 +545,17 @@ header img {
 /* ✅ ADAPTATION SPÉCIALE POUR IPHONE ET NOTCH */
 @media (max-width: 768px) {
     .landing-page {
-        min-height: calc(130dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        min-height: calc(180dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
         padding-top: env(safe-area-inset-top);
         padding-bottom: env(safe-area-inset-bottom);
     }
 
     body {
-        height: 130dvh;
+        height: 180dvh;
         margin: 0;
         padding: 0;
         overflow-x: hidden;
         background-color: #f8f8f8;
     }
 }
+
