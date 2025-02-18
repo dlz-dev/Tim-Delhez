@@ -460,11 +460,11 @@ header img {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end; /* ✅ Descend le contenu en bas de la section */
+        justify-content: flex-start; /* ✅ Modification pour démarrer sous le menu */
         text-align: center;
         width: 90%;
-        min-height: 100vh; /* ✅ Réduction de la hauteur pour éviter qu'elle soit trop grande */
-        padding: 20px;
+        min-height: 100vh;
+        padding: 70px 20px 20px; /* ✅ Ajoute un espace sous le menu */
         margin: 0 auto;
         position: relative;
     }
@@ -479,20 +479,20 @@ header img {
         font-size: 30px;
         font-weight: bold;
         max-width: 90%;
-        margin: 20px 0;
+        margin: 50px 0 20px; /* ✅ Ajoute 50px d'espace sous le menu */
     }
 
     .little-title {
         font-size: 22px;
         max-width: 90%;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     /* BOUTON SCROLL - DESCENDU EN BAS */
     .discover-btn {
         font-size: 20px;
         padding: 16px 32px;
-        margin-top: auto; /* ✅ Descend le bouton en bas de la section */
+        margin-top: auto;
         margin-bottom: 30px;
         border-radius: 8px;
         position: relative;
@@ -568,4 +568,5 @@ header img {
         background-color: #f8f8f8;
     }
 }
+
 
