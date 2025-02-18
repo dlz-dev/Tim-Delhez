@@ -444,6 +444,9 @@ header img {
         gap: 15px;
         text-align: center;
         margin-top: 20px;
+        width: 80%; /* ✅ Réduction de la largeur du menu pour éviter qu'il prenne toute la largeur */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .nav li {
@@ -457,11 +460,11 @@ header img {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; /* ✅ Centrage vertical pour éviter les chevauchements */
+        justify-content: flex-end; /* ✅ Descend le contenu en bas de la section */
         text-align: center;
         width: 90%;
-        min-height: 150vh; /* ✅ Augmentation pour garantir l'affichage correct */
-        padding: 100px 20px;
+        min-height: 100vh; /* ✅ Réduction de la hauteur pour éviter qu'elle soit trop grande */
+        padding: 20px;
         margin: 0 auto;
         position: relative;
     }
@@ -476,20 +479,21 @@ header img {
         font-size: 30px;
         font-weight: bold;
         max-width: 90%;
-        margin: 40px 0;
+        margin: 20px 0;
     }
 
     .little-title {
         font-size: 22px;
         max-width: 90%;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
-    /* BOUTON SCROLL - AJUSTEMENT UNIVERSEL */
+    /* BOUTON SCROLL - DESCENDU EN BAS */
     .discover-btn {
         font-size: 20px;
         padding: 16px 32px;
-        margin-top: 80px;
+        margin-top: auto; /* ✅ Descend le bouton en bas de la section */
+        margin-bottom: 30px;
         border-radius: 8px;
         position: relative;
         z-index: 2;
@@ -500,7 +504,7 @@ header img {
 @media (max-width: 1024px) {
     .side-projects {
         height: auto;
-        padding: 120px 5% 100px;
+        padding: 80px 5% 80px;
     }
 
     .projects-container {
@@ -530,7 +534,7 @@ header img {
 /* ✅ ADAPTATION DU FOOTER */
 @media (max-width: 1024px) {
     .footer {
-        padding: 60px 5%;
+        padding: 50px 5%;
     }
 
     .footer-content {
@@ -551,7 +555,7 @@ header img {
 /* ✅ ADAPTATION SPÉCIALE POUR IPHONES, TABLETTES ET NOTCH */
 @media (max-width: 1024px) {
     .landing-page {
-        min-height: calc(150vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
         padding-top: env(safe-area-inset-top);
         padding-bottom: env(safe-area-inset-bottom);
     }
@@ -564,3 +568,4 @@ header img {
         background-color: #f8f8f8;
     }
 }
+
