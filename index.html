@@ -24,10 +24,12 @@
         }
 
     </style>
-
 </head>
 
 <body>
+    <!-- ✅ Bouton pour ouvrir le menu (☰) -->
+    <button class="menu-toggle">☰</button>
+
     <section id="home" class="top-page">
 
         <header>
@@ -53,14 +55,13 @@
         </div>        
     </section>
 
-
-<!-- Edit de la Section SideProject -->
+<!-- Section SideProject -->
 
     <section id="side-projects" class="side-projects">
         <h2 class="section-title">Side Projects</h2>
         <div class="projects-container">
             <a href="project1.html" class="project-box">
-                <img src="img/a-venir-photo.png" alt="Project 1"> <!-- Image du projet -->
+                <img src="img/a-venir-photo.png" alt="Project 1">
                 <h3>Project 1</h3>
                 <p>This project...</p>
                 <button class="discover-btn">Découvrir</button>
@@ -107,11 +108,8 @@
 
 <footer id="contact" class="footer">
     <div class="footer-content">
-        
-        <!-- Nom Tim Delhez à gauche -->
         <p class="owner">Tim Delhez</p>
 
-        <!-- Section Contact -->
         <div class="contact-section">
             <p class="contact-title">📩 Contactez-moi</p>
             <div class="social-links">
@@ -131,7 +129,6 @@
         </div>
     </div>
 
-    <!-- Mention légale en bas centré -->
     <p class="rights">© 2025 Tous droits réservés - <strong>DLZTEAM.COM</strong></p>
 </footer>
 
@@ -148,6 +145,18 @@
                     behavior: "smooth"
                 });
             }
+        });
+    });
+</script>
+
+<!-- ✅ Script JavaScript pour le menu déroulant -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const header = document.querySelector("header");
+
+        menuToggle.addEventListener("click", function () {
+            header.classList.toggle("active");
         });
     });
 </script>
