@@ -430,17 +430,34 @@ header img {
         position: fixed;
         top: 0;
         left: 0;
-        width: 250px; /* ✅ Largeur du menu */
-        height: 100vh; /* ✅ Prend toute la hauteur de l’écran */
+        width: 250px; /* ✅ Largeur fixe du menu */
+        height: 100vh; /* ✅ Prend toute la hauteur */
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start; /* ✅ Place la photo en haut */
         align-items: center;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.95);
         z-index: 1000;
         transition: transform 0.3s ease-in-out;
+        padding-top: 20px; /* ✅ Ajoute un espace en haut */
     }
 
+    /* ✅ Ajout de la photo en haut du menu */
+    .profile-photo {
+        display: block;
+        width: 120px; /* ✅ Taille adaptée */
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 20px; /* ✅ Ajoute un espace sous la photo */
+    }
+
+    .profile-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
     .nav {
         display: flex;
         flex-direction: column;
@@ -491,14 +508,14 @@ header img {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; /* ✅ Place les éléments du haut vers le bas */
+        justify-content: flex-start; /* ✅ Organise du haut vers le bas */
         text-align: center;
-        width: 90%;
+        width: 85%; /* ✅ Assure une largeur identique aux autres sections */
         min-height: 100dvh;
         padding: 20px;
-        margin-left: 250px; /* ✅ Décale la section pour éviter que le menu cache */
+        margin-left: 250px; /* ✅ Décale la section pour éviter qu’elle passe sous le menu */
     }
-
+    
     /* 📌 IMAGE DE PROFIL (EN HAUT ET CENTRÉE) */
     .profile-photo {
         display: block;
@@ -514,7 +531,7 @@ header img {
         height: 100%;
         object-fit: cover;
     }
-
+    
     /* 📌 NOM EN DESSOUS DE L'IMAGE */
     .big-title {
         font-size: 24px;
