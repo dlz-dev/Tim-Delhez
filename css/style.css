@@ -422,16 +422,16 @@ header img {
 
 
 
-/* ADAPTATION MOBILE */
+/* ✅ ADAPTATION MOBILE COMPLÈTE */
 
 /* ADAPTATION DU HEADER */
 @media (max-width: 768px) {
     header {
-        width: 60%;
+        width: 100%;
         flex-direction: column;
         text-align: center;
-        padding: 10px 20px;
-        margin-bottom: 0px;
+        padding: 15px 20px;
+        margin-bottom: 0;
     }
 
     .nav {
@@ -444,25 +444,20 @@ header img {
     .nav li {
         font-size: 16px;
     }
-
-    .nav li a {
-        text-decoration: none;
-        color: white;
-    }
 }
 
-/* 📌 ADAPTATION DE LA SECTION WELCOME */
+/* ✅ ADAPTATION DE LA LANDING PAGE */
 @media (max-width: 768px) {
     .landing-page {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         text-align: center;
         width: 90%;
         min-height: 100dvh;
-        padding: 10px 20px;
-        margin-top: 100px;
+        padding: 20px;
+        margin: 0 auto;
     }
 
     /* IMAGE DE PROFIL (SUPPRIMÉE EN MOBILE) */
@@ -472,127 +467,34 @@ header img {
 
     /* TITRES */
     .big-title {
-        font-size: 24px;
-        max-width: 100%;
-        margin-top: 30px;
-        margin-bottom: 20px;
+        font-size: 26px;
+        font-weight: bold;
+        max-width: 90%;
+        margin: 20px 0;
     }
 
     .little-title {
-        font-size: 16px;
-        max-width: 100%;
+        font-size: 18px;
+        max-width: 90%;
         margin-bottom: 30px;
     }
 
     /* BOUTON SCROLL */
     .discover-btn {
         font-size: 16px;
-        padding: 10px 20px;
-        margin-top: 20px;
+        padding: 12px 25px;
+        margin-top: 15px;
+        border-radius: 8px;
     }
 }
 
-/* ADAPTATION DES BOUTONS */
-@media (max-width: 768px) {
-    .discover-btn {
-        font-size: 16px;
-        padding: 10px 20px;
-        margin-top: 20px;
-    }
-}
-
-/* ADAPTATION DE LA SECTION "SIDE PROJECTS" */
+/* ✅ ADAPTATION DE LA SECTION "SIDE PROJECTS" */
 @media (max-width: 768px) {
     .side-projects {
         height: auto;
         padding: 60px 5%;
     }
 
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-
-    /* AUGMENTATION DES BOXES POUR MIEUX POSITIONNER LE BOUTON */
-    .project-box {
-        width: 90%;
-        height: auto;
-        padding-bottom: 80px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    /* TAILLE DE L'IMAGE DANS LES BOXES */
-    .project-box img {
-        height: 180px;
-    }
-
-    /* POSITIONNEMENT DU BOUTON "DÉCOUVRIR" */
-    .project-box .discover-btn {
-        position: relative;
-        margin-top: 15px;
-        align-self: center;
-    }
-}
-
-/* ADAPTATION DU FOOTER */
-@media (max-width: 768px) {
-    .footer {
-        padding: 40px 5%;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .owner {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .contact-section {
-        margin-bottom: 15px;
-    }
-
-    .social-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .social-icon {
-        font-size: 18px;
-    }
-}
-
-/* CHANGEMENT DU LOGO EN MODE MOBILE */
-@media (max-width: 768px) {
-    .logo {
-        width: 150px !important;
-        height: 160px;
-    }
-}
-
-/* ADAPTATION DE L'IMAGE DE PROFIL : CENTRÉE EN BAS */
-@media (max-width: 768px) {
-    .big-title {
-        margin-bottom: 30px;
-    }
-
-    .little-title {
-        margin-bottom: 50px;
-    }
-
-    .discover-btn {
-        margin-top: 10px;
-    }
-}
-
-/* ADAPTATION DES BOXES POUR ÉVITER LE CHEVAUCHEMENT */
-@media (max-width: 768px) {
     .projects-container {
         flex-direction: column;
         align-items: center;
@@ -615,35 +517,35 @@ header img {
         object-fit: cover;
         border-radius: 10px;
     }
+}
 
-    .project-box h3 {
-        font-size: 24px;
-        margin-top: 15px;
+/* ✅ ADAPTATION DU FOOTER */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 5%;
     }
 
-    .project-box p {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .owner {
         font-size: 18px;
-        padding: 0 15px;
-        flex-grow: 1;
+        margin-bottom: 10px;
     }
 
-    .project-box .discover-btn {
-        position: relative;
-        bottom: 0;
-        width: 80%;
-        padding: 12px 20px;
-        margin-top: auto;
+    .contact-section {
+        margin-bottom: 15px;
     }
 }
 
-
-
-/* 📌 ADAPTATION SPÉCIALE POUR IPHONE 16 PRO ET DYNAMIC ISLAND */
+/* ✅ ADAPTATION SPÉCIALE POUR IPHONE ET NOTCH */
 @media (max-width: 768px) {
     .landing-page {
-        min-height: 100dvh; /* ✅ Utilisation de `100dvh` au lieu de `100vh` */
-        padding-top: env(safe-area-inset-top); /* ✅ Ajoute du padding pour Dynamic Island */
-        padding-bottom: env(safe-area-inset-bottom); /* ✅ Ajuste pour la Touch Bar */
+        min-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
     }
 
     body {
@@ -651,6 +553,6 @@ header img {
         margin: 0;
         padding: 0;
         overflow-x: hidden;
-        background-color: #f8f8f8; /* ✅ Ajuste pour éviter les bordures blanches */
+        background-color: #f8f8f8;
     }
 }
