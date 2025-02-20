@@ -432,7 +432,7 @@ header img {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: url("../img/profile_png.png") no-repeat center center fixed;
+    background: url("../img/fond_section_1.jpg") no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -488,12 +488,8 @@ body {
         max-width: 90%;
         margin-bottom: 25px;
     }
-
-    /* Suppression de l'image de profil */
-    .profile-container {
-        display: none;
-    }
 }
+
 
 
 
