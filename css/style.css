@@ -1,6 +1,4 @@
-/* ------------------------------------------------------------------
-   1. FONTS & RESET
------------------------------------------------------------------- */
+/* 1. FONT & RESET */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 * {
@@ -10,21 +8,28 @@
     box-sizing: border-box;
 }
 
-/* ------------------------------------------------------------------
-   2. BODY
------------------------------------------------------------------- */
+/* 2. BODY 
+   -> On applique un background-size:cover, 
+   et on n'impose plus la position "fixed" 
+   (pour que l'image se redimensionne vraiment sur mobile)
+*/
 body {
     background: url("../img/fond_section_1.jpg") no-repeat center center;
     background-size: cover;
+    background-attachment: scroll;
+    /* On laisse le body prendre la hauteur du contenu */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* ------------------------------------------------------------------
-   3. HEADER (DESKTOP)
------------------------------------------------------------------- */
+/* 3. HEADER 
+   -> On ajoute une marge entre le header et le haut de la page. 
+   -> (Deux options : margin-top ou top:)
+*/
+
+/* --- OPTION A : Position statique + margin-top --- */
 header {
     display: flex;
     align-items: center;
@@ -34,23 +39,33 @@ header {
     padding: 15px 30px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translateX(-50%);
+
+    /* On supprime la position absolute 
+       et on ajoute une marge en haut : */
+    margin-top: 30px;
+    /* margin-bottom: ? selon vos besoins */
     backdrop-filter: blur(8px); 
 }
 
-/* Logo (desktop) */
+/* --- Si vous tenez à la position absolute (OPTION B) ---
+   header {
+       position: absolute;
+       left: 50%;
+       top: 15%; // ajustez par ex. de 10% à 15%
+       transform: translateX(-50%);
+       ...
+   }
+   ...
+*/
+
+/* Logo */
 header img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
 
-/* ------------------------------------------------------------------
-   4. NAVIGATION (DESKTOP)
------------------------------------------------------------------- */
+/* Navigation (desktop) */
 .nav {
     display: flex;
     gap: 20px;
@@ -67,26 +82,26 @@ header img {
 
 .nav li a {
     text-decoration: none;
-    color: inherit; /* blanc hérité */
+    color: inherit;
 }
 
 .nav li:hover {
     color: #ff416c;
 }
 
-/* ------------------------------------------------------------------
-   5. LANDING PAGE (DESKTOP)
------------------------------------------------------------------- */
+/* 4. LANDING-PAGE
+   -> On supprime la position absolute 
+      pour qu'elle prenne sa place "naturelle",
+      ce qui évite le grand vide. 
+*/
 .landing-page {
-    position: absolute;
-    left: 50%;
-    top: 35%;
-    transform: translateX(-50%);
-    width: 60%;
+    width: 60%; /* ou 80%, 90% selon vos goûts */
+    margin-top: 50px; /* espace après le header */
+    margin-bottom: 100px;
     text-align: left;
 }
 
-/* Titre principal */
+/* Big title */
 .big-title {
     background: linear-gradient(45deg, #2c005b, #7c02ff);
     -webkit-background-clip: text;
@@ -94,19 +109,19 @@ header img {
     font-weight: bold;
     font-size: 30px;
     margin-bottom: 40px;
-    max-width: 40%;
+    max-width: 80%; /* ou 60% comme avant */
 }
 
-/* Sous-titre / description */
+/* Little title */
 .little-title {
     color: white;
     font-weight: 300;
     font-size: 20px;
     margin-top: 20px;
-    max-width: 60%;
+    max-width: 100%;
 }
 
-/* Bouton de scroll */
+/* Bouton scroll */
 .discover-btn {
     background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
@@ -125,20 +140,20 @@ header img {
     transform: scale(1.05);
 }
 
-/* ------------------------------------------------------------------
-   6. SECTION "SIDE PROJECTS" (DESKTOP)
------------------------------------------------------------------- */
+/* 5. SIDE PROJECTS 
+   -> On retire l'excès de "height:120vh" 
+      pour qu'elle s'ajuste à son contenu 
+*/
 .side-projects {
     text-align: center;
     padding: 80px 10%;
-    background: url("../img/fond_section_2.jpg") no-repeat center center fixed;
+    background: url("../img/fond_section_2.jpg") no-repeat center center;
     background-size: cover;
     width: 100%;
-    margin-top: 100vh;
-    /* Par défaut, on avait "height: 120vh", 
-       mais on peut laisser l'auto-height 
-       si ça convient mieux. */
-    height: auto;
+    /* plus de margin-top si vous voulez 
+       enchaîner directement après la landing-page */
+    margin-top: 50px;
+    height: auto; 
 }
 
 .section-title {
@@ -150,7 +165,7 @@ header img {
     margin-bottom: 40px;
 }
 
-/* Container flexible (desktop) */
+/* Container en flex (desktop) */
 .projects-container {
     display: flex;
     justify-content: center;
@@ -158,12 +173,12 @@ header img {
     width: 90%;
 }
 
-/* Les boîtes de projets */
+/* 6. Les boîtes (augmentation de la hauteur pour "respirer") */
 .project-box {
     background: rgba(255, 255, 255, 0.1);
     padding: 40px;
     width: 30%;
-    height: 700px;
+    height: 900px; /* <-- 700px -> 900px */
     border-radius: 20px;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -218,7 +233,7 @@ header img {
     transform: scale(1.1);
 }
 
-/* Animation au survol */
+/* Effets hover + animation au scroll (inchangés) */
 .project-box:hover {
     transform: translateY(-20px) scale(1.12);
     box-shadow: 0px 15px 35px rgba(255, 255, 255, 0.5);
@@ -246,8 +261,6 @@ header img {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
-
-/* Apparition au scroll */
 .project-box {
     opacity: 0;
     transform: translateY(50px);
@@ -258,9 +271,7 @@ header img {
     transform: translateY(0);
 }
 
-/* ------------------------------------------------------------------
-   7. FOOTER
------------------------------------------------------------------- */
+/* 7. FOOTER (inchangé sauf si vous voulez un alignement/marge) */
 .footer {
     background: url("../img/pied_de_page_fond.jpg") no-repeat center center;
     background-size: cover;
@@ -288,19 +299,15 @@ header img {
     text-align: left;
     color: hsl(23, 100%, 50%);
 }
-
 .contact-section {
     text-align: center;
 }
-
 .contact-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 35px;
     color: hsl(23, 100%, 50%);
 }
-
-/* Liens sociaux */
 .social-links {
     display: flex;
     flex-direction: column;
@@ -327,8 +334,6 @@ header img {
     transform: scale(1.2);
     opacity: 0.8;
 }
-
-/* Mentions légales */
 .rights {
     font-size: 14px;
     opacity: 0.8;
@@ -336,137 +341,59 @@ header img {
     color: hsl(23, 100%, 50%);
 }
 
-/* ------------------------------------------------------------------
-   8. ADAPTATION MOBILE
------------------------------------------------------------------- */
+/* -------------------------------------------------------
+   8. MEDIA QUERIES (MOBILE) - adaptent largeur, hauteur, etc.
+---------------------------------------------------------- */
 @media (max-width: 768px) {
 
-    /* --- Le header s'adapte (on enlève la position absolue) --- */
+    /* Header en colonne ou statique 
+       -> si vous avez le menu burger, le code reste similaire
+    */
     header {
         width: 100%;
-        position: relative;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 10px;
-        margin-bottom: 0;
-        top: 0;
-        left: 0;
-        transform: none;
-    }
-
-    /* ----------- BOUTON HAMBURGER ----------- */
-    .hamburger {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        margin-left: auto; /* Pousse le bouton à droite */
-        position: relative;
-        z-index: 1001; /* Au-dessus de la nav */
-    }
-    .bar {
-        display: block;
-        width: 100%;
-        height: 4px;
-        margin: 6px 0;
-        background-color: #fff;
-        transition: 0.3s;
-    }
-    /* Animation de la croix */
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(10px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg);
-    }
-
-    /* --- Navigation fermée par défaut (déplacée hors écran) --- */
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%; /* hors de l'écran */
-        width: 50%;
-        height: 100vh;
-        background-color: #001f3f; /* Bleu foncé */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        transition: right 0.3s ease;
-        z-index: 999;
-    }
-    /* .nav-open => on l’ajoute en JS pour afficher le menu */
-    .nav.nav-open {
-        right: 0; /* Slide in */
-    }
-
-    /* On masque toute image dans la nav, si jamais présente */
-    .nav img {
-        display: none !important;
-    }
-
-    /* Liens du menu */
-    .nav li a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 18px;
-    }
-
-    /* --- LANDING PAGE SANS min-height FORCÉE --- */
-    .landing-page {
         position: static;
+        margin-top: 15px; /* marge supplémentaire en mobile */
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        text-align: center;
+    }
+
+    /* landing-page en pleine largeur (ou 90%) */
+    .landing-page {
         width: 90%;
-        height: auto; /* S’adapte au contenu */
-        padding: 30px 0;
-        margin-top: 60px; /* Laisse un petit espace sous le header */
+        margin-top: 30px;
+        margin-bottom: 50px;
+        text-align: center;
+        position: static;
     }
-
-    /* Photo de profil affichée en haut */
-    .profile-photo {
-        position: static !important;
-        width: 200px !important;
-        height: 200px !important;
-        margin: 0 auto 20px auto;
-    }
-
     .big-title {
         font-size: 26px;
-        max-width: 90%;
+        max-width: 100%;
         margin-bottom: 15px;
     }
-
     .little-title {
         font-size: 18px;
-        max-width: 90%;
+        max-width: 100%;
         margin-bottom: 25px;
     }
-
     .discover-btn {
         margin-top: 10px;
     }
 
-    /* --- SIDE PROJECTS EN COLONNE SUR MOBILE --- */
+    /* Empile les projets en colonne */
     .projects-container {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
+    /* Rendre la box pleine largeur */
     .project-box {
         width: 90%;
-        height: auto;
+        height: auto; /* En mobile, on peut laisser l’auto-height 
+                         ou mettre min-height: 900px si vous souhaitez 
+                         garder la hauteur imposée. */
+        min-height: 700px; 
+        padding-bottom: 60px; /* un peu plus de place sous le bouton */
     }
 }
