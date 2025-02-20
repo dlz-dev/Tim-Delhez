@@ -1,26 +1,30 @@
-/* Importation des polices */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* ------------------------------------------------------------------
+   1. FONTS & RESET
+------------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 * {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* --- CORPS DE LA PAGE (BACKGROUND GÉNÉRAL) --- */
+/* ------------------------------------------------------------------
+   2. BODY
+------------------------------------------------------------------ */
 body {
-    margin: 0 auto;
-    background: url("../img/fond_section_1.jpg");
+    background: url("../img/fond_section_1.jpg") no-repeat center center;
     background-size: cover;
-    background-position: center;
-    min-height: 100vh; /* 💡 Permet le scroll */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* --- HEADER (DESKTOP) --- */
+/* ------------------------------------------------------------------
+   3. HEADER (DESKTOP)
+------------------------------------------------------------------ */
 header {
     display: flex;
     align-items: center;
@@ -37,14 +41,16 @@ header {
     backdrop-filter: blur(8px); 
 }
 
-/* Logo dans le header (desktop) */
+/* Logo (desktop) */
 header img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
 
-/* Menu de navigation (desktop) */
+/* ------------------------------------------------------------------
+   4. NAVIGATION (DESKTOP)
+------------------------------------------------------------------ */
 .nav {
     display: flex;
     gap: 20px;
@@ -52,7 +58,7 @@ header img {
 }
 
 .nav li {
-    color: white; 
+    color: white;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
@@ -61,26 +67,28 @@ header img {
 
 .nav li a {
     text-decoration: none;
-    color: inherit; /* blanc hérité de .nav li */
+    color: inherit; /* blanc hérité */
 }
 
 .nav li:hover {
     color: #ff416c;
 }
 
-/* --- SECTION LANDING PAGE (DESKTOP) --- */
+/* ------------------------------------------------------------------
+   5. LANDING PAGE (DESKTOP)
+------------------------------------------------------------------ */
 .landing-page {
     position: absolute;
     left: 50%;
     top: 35%;
     transform: translateX(-50%);
-    width: 60%; /* Même largeur que le header */
+    width: 60%;
     text-align: left;
 }
 
 /* Titre principal */
 .big-title {
-    background: linear-gradient(45deg, #2c005b, #7c02ff); /* Dégradé violet → bleu */
+    background: linear-gradient(45deg, #2c005b, #7c02ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
@@ -89,7 +97,7 @@ header img {
     max-width: 40%;
 }
 
-/* Texte d'introduction */
+/* Sous-titre / description */
 .little-title {
     color: white;
     font-weight: 300;
@@ -98,7 +106,7 @@ header img {
     max-width: 60%;
 }
 
-/* Bouton Scroll */
+/* Bouton de scroll */
 .discover-btn {
     background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
@@ -112,21 +120,25 @@ header img {
     transition: 0.3s ease;
     display: inline-block;
 }
-
 .discover-btn:hover {
     background: linear-gradient(45deg, #2575fc, #6a11cb);
     transform: scale(1.05);
 }
 
-/* --- SECTION SIDE PROJECTS (DESKTOP) --- */
+/* ------------------------------------------------------------------
+   6. SECTION "SIDE PROJECTS" (DESKTOP)
+------------------------------------------------------------------ */
 .side-projects {
     text-align: center;
     padding: 80px 10%;
-    background: url("../img/fond_section_2.jpg");
+    background: url("../img/fond_section_2.jpg") no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
     width: 100%;
     margin-top: 100vh;
+    /* Par défaut, on avait "height: 120vh", 
+       mais on peut laisser l'auto-height 
+       si ça convient mieux. */
+    height: auto;
 }
 
 .section-title {
@@ -138,25 +150,7 @@ header img {
     margin-bottom: 40px;
 }
 
-/* Container flexible */
-.projects-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-/* Occupation de tout l'écran côté style */
-.side-projects {
-    width: 100%;
-    height: 120vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: url("../img/fond_section_2.jpg") no-repeat center center fixed;
-    background-size: cover;
-}
-
+/* Container flexible (desktop) */
 .projects-container {
     display: flex;
     justify-content: center;
@@ -164,7 +158,7 @@ header img {
     width: 90%;
 }
 
-/* Style des boxes (Side Projects) */
+/* Les boîtes de projets */
 .project-box {
     background: rgba(255, 255, 255, 0.1);
     padding: 40px;
@@ -186,7 +180,6 @@ header img {
     text-decoration: none;
 }
 
-/* Image du projet */
 .project-box img {
     width: 100%;
     height: 200px;
@@ -194,14 +187,12 @@ header img {
     border-radius: 15px;
 }
 
-/* Titre dans la box */
 .project-box h3 {
     margin: 30px 0 20px;
     font-size: 30px;
     font-weight: bold;
 }
 
-/* Description dans la box */
 .project-box p {
     font-size: 22px;
     margin-bottom: 35px;
@@ -222,7 +213,6 @@ header img {
     position: absolute;
     bottom: 30px;
 }
-
 .project-box .discover-btn:hover {
     background: linear-gradient(45deg, #ff4b2b, #ff416c);
     transform: scale(1.1);
@@ -234,8 +224,6 @@ header img {
     box-shadow: 0px 15px 35px rgba(255, 255, 255, 0.5);
     background: rgba(255, 255, 255, 0.2);
 }
-
-/* Reflet animé au survol */
 .project-box::before {
     content: "";
     position: absolute;
@@ -259,7 +247,7 @@ header img {
     transition: transform 0.3s ease;
 }
 
-/* Animation au scroll (apparition progressive) */
+/* Apparition au scroll */
 .project-box {
     opacity: 0;
     transform: translateY(50px);
@@ -270,11 +258,12 @@ header img {
     transform: translateY(0);
 }
 
-/* --- FOOTER --- */
+/* ------------------------------------------------------------------
+   7. FOOTER
+------------------------------------------------------------------ */
 .footer {
-    background: url("../img/pied_de_page_fond.jpg");
+    background: url("../img/pied_de_page_fond.jpg") no-repeat center center;
     background-size: cover;
-    background-position: center;
     color: white;
     padding: 40px 10%;
     display: flex;
@@ -293,7 +282,6 @@ header img {
     align-items: center;
 }
 
-/* Tim Delhez à gauche (desktop) */
 .owner {
     font-size: 18px;
     font-weight: bold;
@@ -319,8 +307,6 @@ header img {
     gap: 15px;
     align-items: flex-start;
 }
-
-/* Icônes sociales */
 .social-icon {
     display: flex;
     align-items: center;
@@ -330,12 +316,10 @@ header img {
     font-size: 20px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 .social-icon img {
     width: 20px;
     height: 20px;
 }
-
 .social-icon:hover {
     color: hsl(23, 100%, 50%);
 }
@@ -344,7 +328,7 @@ header img {
     opacity: 0.8;
 }
 
-/* Mention légale */
+/* Mentions légales */
 .rights {
     font-size: 14px;
     opacity: 0.8;
@@ -352,14 +336,13 @@ header img {
     color: hsl(23, 100%, 50%);
 }
 
-/* ---------------------------------------------------- */
-/*                    ADAPTATION MOBILE                 */
-/* ---------------------------------------------------- */
-
+/* ------------------------------------------------------------------
+   8. ADAPTATION MOBILE
+------------------------------------------------------------------ */
 @media (max-width: 768px) {
-    /* -------- NAVIGATION (MENU À DROITE) -------- */
+
+    /* --- Le header s'adapte (on enlève la position absolue) --- */
     header {
-        /* Occupe toute la largeur pour éviter conflits avec le menu fixe */
         width: 100%;
         position: relative;
         display: flex;
@@ -369,14 +352,45 @@ header img {
         margin-bottom: 0;
         top: 0;
         left: 0;
-        transform: none; /* Annule le translateX(-50%) */
+        transform: none;
     }
 
-    /* Menu fixe à droite, fond bleu très foncé */
+    /* ----------- BOUTON HAMBURGER ----------- */
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        margin-left: auto; /* Pousse le bouton à droite */
+        position: relative;
+        z-index: 1001; /* Au-dessus de la nav */
+    }
+    .bar {
+        display: block;
+        width: 100%;
+        height: 4px;
+        margin: 6px 0;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+    /* Animation de la croix */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    /* --- Navigation fermée par défaut (déplacée hors écran) --- */
     .nav {
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%; /* hors de l'écran */
         width: 50%;
         height: 100vh;
         background-color: #001f3f; /* Bleu foncé */
@@ -385,85 +399,74 @@ header img {
         justify-content: center;
         align-items: center;
         gap: 20px;
+        list-style: none;
         margin: 0;
         padding: 0;
-        list-style: none;
-        z-index: 999; /* Au-dessus du reste */
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+    /* .nav-open => on l’ajoute en JS pour afficher le menu */
+    .nav.nav-open {
+        right: 0; /* Slide in */
     }
 
-    /* Pas de photo dans la nav */
+    /* On masque toute image dans la nav, si jamais présente */
     .nav img {
         display: none !important;
     }
 
-    /* Style des liens dans la nav */
+    /* Liens du menu */
     .nav li a {
         color: #ffffff;
         text-decoration: none;
         font-size: 18px;
     }
 
-    /* -------- LANDING PAGE (PHOTO EN HAUT, PUIS TITRE, DESCRIPTION, BOUTON) -------- */
+    /* --- LANDING PAGE SANS min-height FORCÉE --- */
     .landing-page {
-        position: static; /* On enlève la position absolute */
+        position: static;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; /* On place tout en haut */
         text-align: center;
-        width: 100%;
-        min-height: 100vh;
-        padding: 60px 20px;
-        margin-top: 0; /* Plus besoin d’un gros offset */
+        width: 90%;
+        height: auto; /* S’adapte au contenu */
+        padding: 30px 0;
+        margin-top: 60px; /* Laisse un petit espace sous le header */
     }
 
-    /* Photo de profil tout en haut, en format rond, sans absolute */
+    /* Photo de profil affichée en haut */
     .profile-photo {
         position: static !important;
         width: 200px !important;
         height: 200px !important;
-        border-radius: 50%;
-        margin: 0 auto 20px auto; /* Centre horizontalement */
-    }
-    .profile-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        margin: 0 auto 20px auto;
     }
 
-    /* Le grand titre (Nom) juste après la photo */
     .big-title {
-        order: 2; /* Au cas où on souhaite forcer l'ordre */
         font-size: 26px;
         max-width: 90%;
         margin-bottom: 15px;
-        margin-top: 10px;
     }
 
-    /* Le petit titre (Description) */
     .little-title {
-        order: 3;
         font-size: 18px;
         max-width: 90%;
         margin-bottom: 25px;
     }
 
-    /* Bouton scroll en dessous */
     .discover-btn {
-        order: 4;
         margin-top: 10px;
     }
 
-    /* -------- TAILLE DU LOGO (SI BESOIN) -------- */
-    .logo {
-        width: 40px;
-        height: 40px;
+    /* --- SIDE PROJECTS EN COLONNE SUR MOBILE --- */
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .project-box {
+        width: 90%;
+        height: auto;
     }
 }
-
-/* 
-   NOTE : aucune modification sur 
-   .side-projects / .projects-container / .project-box 
-   ou le footer en mobile, donc on laisse 
-   le code desktop (ou existant) tel quel
- */
