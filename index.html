@@ -6,7 +6,6 @@
     <title>Tim Delhez - About Me</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-
         /* Edit de la photo de profile */
         .profile-photo {
             position: absolute;
@@ -22,16 +21,22 @@
             height: 100%;
             object-fit: cover;
         }
-
     </style>
-
 </head>
 
 <body>
     <section id="home" class="top-page">
-
         <header>
             <img class="logo" src="img/logo.jpg" alt="Logo du site">
+            
+            <!-- ******* Bouton Burger ******* -->
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <!-- ******************************** -->
+
             <nav class="nav">
                 <li><a href="#home">About</a></li>
                 <li><a href="#side-projects">Side Projects</a></li>
@@ -41,17 +46,136 @@
         
         <div class="landing-page">
             <h1 class="big-title">Tim Delhez</h1>
-            <h2 class="little-title">I am Tim Delhez, a first-year computer science student specializing in artificial intelligence at HELMo (Guillemins campus, Liège). Passionate about new technologies, I am developing my skills in programming and AI through my studies and various personal projects. My goal is to explore and create innovative solutions that combine artificial intelligence and web development.</h2>
+            <h2 class="little-title">
+                I am Tim Delhez, a first-year computer science student specializing in artificial intelligence 
+                at HELMo (Guillemins campus, Liège). Passionate about new technologies, I am developing my 
+                skills in programming and AI through my studies and various personal projects. My goal is 
+                to explore and create innovative solutions that combine artificial intelligence and 
+                web development.
+            </h2>
             
-            <!-- Photo de profil en rond -->
             <div class="profile-photo">
                 <img src="img/profile_png.png" alt="Profile Photo">
             </div>           
 
-            <!-- Bouton "Scroll" ajouté -->
             <button class="discover-btn" onclick="scrollToNextSection()">Scroll ↓</button>
         </div>        
     </section>
+
+    <section id="side-projects" class="side-projects">
+        <h2 class="section-title">Side Projects</h2>
+        <div class="projects-container">
+            <a href="project1.html" class="project-box">
+                <img src="img/a-venir-photo.png" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>This project...</p>
+                <button class="discover-btn">Découvrir</button>
+            </a>
+            <a href="project2.html" class="project-box">
+                <img src="img/a-venir-photo.png" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>This project...</p>
+                <button class="discover-btn">Découvrir</button>
+            </a>
+            <a href="project3.html" class="project-box">
+                <img src="img/a-venir-photo.png" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>This project...</p>
+                <button class="discover-btn">Découvrir</button>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        function scrollToNextSection() {
+            window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
+        // Détecte si une box est visible
+        function revealProjects() {
+            let boxes = document.querySelectorAll('.project-box');
+            let windowHeight = window.innerHeight;
+            boxes.forEach(box => {
+                let boxTop = box.getBoundingClientRect().top;
+                if (boxTop < windowHeight - 50) {
+                    box.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealProjects);
+        revealProjects();
+    </script>
+
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <p class="owner">Tim Delhez</p>
+            <div class="contact-section">
+                <p class="contact-title">📩 Contactez-moi</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" onclick="alert('Ajoute-moi sur Discord : agentk21');">
+                        <img src="img/Fichier 90.png" alt="Discord">
+                        <span>Discord</span>
+                    </a>
+                    <a href="mailto:dev@dlzteam.com" class="social-icon">
+                        <img src="img/Fichier 91.png" alt="Email">
+                        <span>Email</span>
+                    </a>
+                    <a href="https://github.com/dlz-dev" target="_blank" class="social-icon">
+                        <img src="img/Fichier 89.png" alt="GitHub">
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="rights">© 2025 Tous droits réservés - <strong>DLZTEAM.COM</strong></p>
+    </footer>
+
+    <!-- Scroll fluide -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 50,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Changement du logo en mobile
+        document.addEventListener("DOMContentLoaded", function () {
+            let logo = document.querySelector(".logo");
+            if (logo) {
+                if (window.innerWidth <= 768) {
+                    logo.src = "img/IMG_8227.jpg"; 
+                }
+            }
+        });
+    </script>
+
+    <!-- Script pour le bouton hamburger -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav');
+        
+        // On masque la nav par défaut (en mobile),
+        // et on l'affiche quand on clique sur l'icône
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('nav-open');    // toggle la classe .nav-open
+            hamburger.classList.toggle('active'); // pour l’animation des barres
+        });
+    </script>
+
+</body>
+</html>
+
 
 
 <!-- Edit de la Section SideProject -->
