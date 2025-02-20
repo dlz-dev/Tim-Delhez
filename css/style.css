@@ -440,7 +440,6 @@ body {
     align-items: center;
 }
 
-
 /* Header pour mobile */
 
 @media (max-width: 768px) {
@@ -465,8 +464,6 @@ body {
     }
 }
 
-
-
 @media (max-width: 768px) {
     .landing-page {
         position: static; /* On enlève la position absolue */
@@ -490,23 +487,6 @@ body {
         font-size: 18px;
         max-width: 90%;
         margin-bottom: 25px;
-    }
-
-    .profile-container {
-        position: static; /* Plus de superposition */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .profile-picture {
-        width: 120px; /* Taille réduite */
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #fff;
     }
 }
 
