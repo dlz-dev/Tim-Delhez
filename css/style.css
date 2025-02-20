@@ -17,6 +17,15 @@ body {
   flex-direction: column;
 }
 
+html,
+body {
+  background-color: #121520;
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+}
+
+
 /* Section présentation - dégradé */
 #home {
   width: 100%;
