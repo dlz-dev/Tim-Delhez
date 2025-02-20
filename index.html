@@ -1,3 +1,6 @@
+
+<!-- Portfolio Personnel - Delhez Tim - Code OpenSource Github - HTML -->
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,13 +12,13 @@
 </head>
 <body>
 
-  <!-- SECTION ACCUEIL -->
+  <!-- Section présentation... -->
   <section id="home" class="top-page">
       
     <header>
       <img class="logo" src="img/logo.jpg" alt="Logo du site">
       
-      <!-- BOUTON BURGER (si vous l'utilisez) -->
+      <!-- Bouton menu... -->
       <button class="hamburger" aria-label="Toggle navigation menu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -31,12 +34,12 @@
 
     </header>
 
-    <!-- PHOTO DE PROFIL (JUSTE EN-DESSOUS DU HEADER) -->
+    <!-- Photo de profil... -->
     <div class="profile-photo">
       <img src="img/profile_png.png" alt="Profile Photo">
     </div>
 
-    <!-- CONTENU LANDING (votre nom, description, bouton) -->
+    <!-- Contenu de la landing-page -->
     <div class="landing-page">
       <h1 class="big-title">Tim Delhez</h1>
       <h2 class="little-title">
@@ -51,7 +54,7 @@
 
   </section>
 
-  <!-- SECTION SIDE-PROJECTS -->
+  <!-- Préparation de la section side-projects -->
   <section id="side-projects" class="side-projects">
     <h2 class="section-title">Side Projects</h2>
     <div class="projects-container">
@@ -97,7 +100,7 @@
     revealProjects();
   </script>
 
-  <!-- FOOTER -->
+  <!-- Préparation du footer... -->
   <footer id="contact" class="footer">
     <div class="footer-content">
       <p class="owner">Tim Delhez</p>
@@ -123,7 +126,7 @@
   </footer>
 
   <script>
-    // Logo adaptatif
+    // Logo adaptation
     document.addEventListener("DOMContentLoaded", function () {
       let logo = document.querySelector(".logo");
       if (logo && window.innerWidth <= 768) {
@@ -132,7 +135,7 @@
     });
   </script>
 
-  <!-- Menu burger JS (si besoin) -->
+  <!-- Menu JS -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
@@ -152,7 +155,7 @@
 </script>
 
 <script>
-    // Détecte si une box est visible à l'écran
+    // Détection d'une boxe
     function revealProjects() {
         let boxes = document.querySelectorAll('.project-box');
         let windowHeight = window.innerHeight;
@@ -165,7 +168,7 @@
         });
     }
 
-    // Exécute la fonction au scroll
+    // Scroll
     window.addEventListener('scroll', revealProjects);
     revealProjects();
 </script>
@@ -173,7 +176,7 @@
 
 
 <script>
-    // Vérifie que tous les liens du menu permettent un scroll fluide
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function(e) {
             e.preventDefault();
@@ -189,7 +192,7 @@
     });
 </script>
 
-<!-- ✅ Correction du script JavaScript -->
+<!-- JS -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         let logo = document.querySelector(".logo");
