@@ -424,6 +424,7 @@ header img {
 
 /* ADAPTATION MOBILE */
 
+/* Styles généraux */
 * {
     margin: 0;
     padding: 0;
@@ -432,7 +433,7 @@ header img {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: url("../img/profile_png.png") no-repeat center center fixed;
+    background: url("../img/votre_image_de_fond.jpg") no-repeat center center fixed; /* Remplacez par l'URL de votre image de fond */
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -444,7 +445,6 @@ body {
 }
 
 /* Header pour mobile */
-
 @media (max-width: 768px) {
     header {
         width: 100%;
@@ -471,6 +471,7 @@ body {
     }
 }
 
+/* Styles spécifiques à la landing page pour mobile */
 @media (max-width: 768px) {
     .landing-page {
         position: relative;
@@ -483,6 +484,8 @@ body {
         min-height: 100vh;
         padding: 80px 20px 40px;
         margin: 0 auto;
+        background: url("../img/votre_image_de_fond.jpg") no-repeat center center; /* Assurez-vous que l'image de fond souhaitée est appliquée */
+        background-size: cover;
     }
 
     .big-title {
@@ -501,7 +504,7 @@ body {
         max-width: 90%;
     }
 
-    /* Bouton scroll bien centré */
+    /* Bouton de défilement centré */
     .discover-btn {
         font-size: 18px;
         padding: 12px 24px;
@@ -522,16 +525,17 @@ body {
         transform: scale(1.05);
     }
 
-    /* Suppression complète de l'image de profil */
+    /* Masquer la photo de profil */
     .profile-container {
         display: none;
     }
 
-    /* Ajout d'un espacement entre la landing page et la section suivante */
+    /* Espacement entre la landing page et la section suivante */
     .landing-page + .side-projects {
         margin-top: 40px;
     }
 }
+
 
 
 
