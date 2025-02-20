@@ -468,44 +468,49 @@ body {
 
 
 /* Landing-page */
-
 @media (max-width: 768px) {
     .landing-page {
-        position: static; /* On enlève la position absolue */
+        position: static; /* Supprime la position absolue */
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Centre horizontalement */
+        justify-content: center; /* Centre verticalement */
         text-align: center;
-        width: 90%; /* Augmente la largeur sur mobile */
-        min-height: auto; /* Permet une hauteur dynamique */
-        padding: 80px 20px 40px; /* Ajoute de l’espace */
+        width: 90%;
+        min-height: 100vh; /* Utilise toute la hauteur de l'écran */
+        padding: 80px 20px 40px;
     }
 
     .big-title {
-        font-size: 26px; /* Réduit la taille pour mobile */
-        max-width: 100%;
-        margin-bottom: 15px;
+        font-size: 28px; /* Ajuste la taille */
+        max-width: 80%;
+        margin-bottom: 20px;
     }
 
     .little-title {
         font-size: 18px;
-        max-width: 100%;
-        margin-bottom: 25px;
+        max-width: 80%;
+        margin-bottom: 30px;
     }
 
     .profile-container {
-        position: static; /* Plus de position absolue */
-        transform: none;
-        margin-top: 20px;
+        position: relative; /* Plus de superposition */
         display: flex;
         justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 30px;
     }
 
     .profile-picture {
-        width: 120px; /* Réduction de la taille */
-        height: 120px;
+        width: 130px; /* Taille réduite */
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #fff;
     }
 }
+
 
 
 
