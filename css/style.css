@@ -435,17 +435,30 @@ header img {
     }
 
     header {
-        width: 90%;
-        flex-direction: column;
-        text-align: center;
-        padding: 10px 20px;
-        top: 5%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background: rgba(20, 10, 30, 0.6);
+        border-radius: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
     }
 
     .nav {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
+        display: flex;
+        gap: 15px;
+        list-style: none;
+    }
+
+    .nav li {
+        font-size: 16px;
+        color: white;
     }
 
     .landing-page {
@@ -454,16 +467,16 @@ header img {
         align-items: center;
         text-align: center;
         width: 90%;
-        min-height: 100vh;
-        padding: 20px;
+        min-height: auto;
+        padding: 80px 20px 40px;
         justify-content: center;
     }
 
     .big-title {
-        font-size: 28px;
+        font-size: 30px;
         font-weight: bold;
         text-align: center;
-        max-width: 80%;
+        max-width: 85%;
         margin-bottom: 20px;
     }
 
@@ -472,13 +485,12 @@ header img {
         font-weight: 300;
         text-align: center;
         max-width: 90%;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
     .discover-btn {
         font-size: 18px;
         padding: 12px 24px;
-        margin-top: 20px;
         border-radius: 10px;
         background: linear-gradient(45deg, #ff416c, #ff4b2b);
         color: white;
@@ -493,18 +505,21 @@ header img {
     }
 
     .profile-container {
-        width: 100%;
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     .profile-picture {
-        width: 120px;
-        height: 120px;
+        width: 130px;
+        height: 130px;
         border-radius: 50%;
         object-fit: cover;
         border: 3px solid #fff;
+    }
+
+    .landing-page + .side-projects {
+        margin-top: 20px;
     }
 }
 
