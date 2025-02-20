@@ -432,7 +432,7 @@ header img {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: url("../img/fond_section_1.jpg") no-repeat center center fixed;
+    background: url("../img/profile_png.png") no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -467,44 +467,43 @@ body {
 
 
 
-/* Landing-page */
 @media (max-width: 768px) {
     .landing-page {
-        position: static; /* Supprime la position absolue */
+        position: static; /* On enlève la position absolue */
         display: flex;
         flex-direction: column;
         align-items: center; /* Centre horizontalement */
         justify-content: center; /* Centre verticalement */
         text-align: center;
-        width: 90%;
-        min-height: 100vh; /* Utilise toute la hauteur de l'écran */
-        padding: 80px 20px 40px;
+        width: 90%; /* Utilisation de plus d’espace */
+        min-height: 100vh; /* Utilisation de toute la hauteur de l’écran */
+        padding: 60px 20px; /* Ajoute de l’espace autour */
     }
 
     .big-title {
-        font-size: 28px; /* Ajuste la taille */
-        max-width: 80%;
-        margin-bottom: 20px;
+        font-size: 26px; /* Ajuste la taille */
+        max-width: 90%; /* Largeur ajustée */
+        margin-bottom: 15px;
     }
 
     .little-title {
         font-size: 18px;
-        max-width: 80%;
-        margin-bottom: 30px;
+        max-width: 90%;
+        margin-bottom: 25px;
     }
 
     .profile-container {
-        position: relative; /* Plus de superposition */
+        position: static; /* Plus de superposition */
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     .profile-picture {
-        width: 130px; /* Taille réduite */
-        height: 130px;
+        width: 120px; /* Taille réduite */
+        height: 120px;
         border-radius: 50%;
         object-fit: cover;
         border: 3px solid #fff;
