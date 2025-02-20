@@ -1,4 +1,8 @@
-/* 1. REMISE À ZÉRO & POLICE */
+
+/* Portfolio Personnel - Delhez Tim - Code OpenSource Github - CSS */
+
+
+/* Importation des polices nécessaires... */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 * {
@@ -6,28 +10,25 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-/* 2. BODY : On ne met pas d'image, 
-      on laisse chaque section avoir son dégradé. */
+/* Chaque section à son propre dégradé... */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* 3. SECTION #HOME : dégradé foncé -> plus foncé 
-   => ex: #1a1f2a -> #121520 
-*/
+/* Section présentation - dégradé */
 #home {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(135deg, #1a1f2a 0%, #121520 100%);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centre horizontalement */
+  align-items: center;
   position: relative;
 }
 
-/* HEADER qui ne touche pas les bords : margin auto + width 90% */
+
 header {
   display: flex;
   align-items: center;
@@ -47,7 +48,7 @@ header img {
   border-radius: 50%;
 }
 
-/* Navigation desktop */
+/* Navigation */
 .nav {
   display: flex;
   gap: 20px;
@@ -74,7 +75,7 @@ header img {
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  margin-top: 20px;    /* écart sous le header */
+  margin-top: 20px;
 }
 .profile-photo img {
   width: 100%;
@@ -82,15 +83,15 @@ header img {
   object-fit: cover;
 }
 
-/* Contenu landing page (nom, description, bouton) */
+/* Contenu de la landing - page... */
 .landing-page {
   width: 90%;
   max-width: 1000px;
-  margin: 30px auto 50px auto; /* un peu d'espace en bas pour le bouton */
+  margin: 30px auto 50px auto;
   text-align: center;
 }
 
-/* Titre principal */
+/* Titre principal - Tim Delhez */
 .big-title {
   background: linear-gradient(45deg, #2c005b, #7c02ff);
   -webkit-background-clip: text;
@@ -100,7 +101,7 @@ header img {
   margin-bottom: 20px;
 }
 
-/* Description - Pas de overflow ni max-height => s'affiche librement */
+/* Description - Little Title */
 .little-title {
   color: #ccc;
   font-weight: 300;
@@ -110,7 +111,7 @@ header img {
   margin: 0 auto;
 }
 
-/* Bouton Scroll : en bas de la landing-page avec marge */
+/* Design du bouton scroll */
 .discover-btn {
   background: linear-gradient(45deg, #6a11cb, #2575fc);
   color: white;
@@ -129,10 +130,7 @@ header img {
   transform: scale(1.05);
 }
 
-/* 4. SECTION #SIDE-PROJECTS 
-   On reprend la couleur finale (#121520) de #home en dégradé
-   vers un ton encore plus sombre #0C0E13
-*/
+
 #side-projects {
   width: 100%;
   background: linear-gradient(135deg, #121520 0%, #0C0E13 100%);
@@ -151,7 +149,7 @@ header img {
   margin-bottom: 40px;
 }
 
-/* Container flex (desktop) */
+/* Boxes */
 .projects-container {
   display: flex;
   justify-content: center;
@@ -160,7 +158,7 @@ header img {
   margin: 0 auto;
 }
 
-/* Boxes side-projects (plus hautes, etc.) */
+/* Boxes */
 .project-box {
   background: rgba(255, 255, 255, 0.08);
   padding: 40px;
@@ -252,7 +250,7 @@ header img {
   transform: translateY(0);
 }
 
-/* 5. FOOTER : on part de #0C0E13 vers un mauve/bleu très sombre (#1a1030) */
+/* Préparation du Footer... */
 .footer {
   width: 100%;
   background: linear-gradient(135deg, #0C0E13 0%, #1a1030 100%);
@@ -320,7 +318,7 @@ header img {
 /* 6. MEDIA QUERIES (MOBILE) */
 @media (max-width: 768px) {
   
-  /* BOUTON BURGER */
+/* Bouton adaptation média... */
   .hamburger {
     display: block;
     background: none;
@@ -396,14 +394,13 @@ header img {
   .project-box {
     width: 90%;
     height: auto;
-    min-height: 600px; /* un peu moins grand si on veut */
+    min-height: 600px;
     margin: 0 auto;
   }
 }
 
 
 .little-title {
-  /* Pour être sûr qu’elle s’affiche intégralement */
   white-space: normal;
   overflow: visible;
   text-overflow: clip;
@@ -433,12 +430,12 @@ header img {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: center; /* si tu veux centrer */
+  text-align: center;
   position: relative;
   transition: text-shadow 0.3s ease;
 }
 
-/* Animation keyframes: effet néon qui “pulse” */
+/* Affichage néon pulse effet */
 @keyframes neon-pulse {
   0% {
     text-shadow: 0 0 5px #7c02ff;
@@ -451,8 +448,7 @@ header img {
   }
 }
 
-/* Au survol => le titre pulse */
+/* au survol uniquement */
 .big-title:hover {
   animation: neon-pulse 1.5s infinite alternate;
 }
-
