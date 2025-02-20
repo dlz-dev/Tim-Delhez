@@ -488,7 +488,13 @@ body {
         max-width: 90%;
         margin-bottom: 25px;
     }
+
+    /* Suppression de l'image de profil */
+    .profile-container {
+        display: none;
+    }
 }
+
 
 
 
