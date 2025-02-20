@@ -400,3 +400,59 @@ header img {
     margin: 0 auto;
   }
 }
+
+
+.little-title {
+  /* Pour être sûr qu’elle s’affiche intégralement */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  display: block;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 20px auto; 
+  transition: transform 1s ease;
+}
+.profile-photo:hover {
+  transform: rotate(360deg);
+}
+
+.big-title {
+  background: linear-gradient(45deg, #2c005b, #7c02ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center; /* si tu veux centrer */
+  position: relative;
+  transition: text-shadow 0.3s ease;
+}
+
+/* Animation keyframes: effet néon qui “pulse” */
+@keyframes neon-pulse {
+  0% {
+    text-shadow: 0 0 5px #7c02ff;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff00ff, 0 0 10px #7c02ff;
+  }
+  100% {
+    text-shadow: 0 0 5px #7c02ff;
+  }
+}
+
+/* Au survol => le titre pulse */
+.big-title:hover {
+  animation: neon-pulse 1.5s infinite alternate;
+}
+
