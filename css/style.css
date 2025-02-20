@@ -1,444 +1,409 @@
-/* ------------------------------------------------------------------
-   1. FONTS & RESET
------------------------------------------------------------------- */
+/* 1. FONT & RESET */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 * {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ------------------------------------------------------------------
-   2. BODY
-   - On applique background-size: cover; (pour adapter l'image)
-   - On ne met plus background-attachment: fixed (pour éviter les débordements)
------------------------------------------------------------------- */
+/* 2. GLOBAL BODY (pas d’image, juste un fond uni) */
 body {
-    background: url("../img/fond_section_1.jpg") no-repeat center center;
-    background-size: cover;
-    /* On laisse le body s'adapter en hauteur */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  /* On ne met pas de fond image global,
+     on laisse chaque section avoir son dégradé */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ------------------------------------------------------------------
-   3. HEADER (DESKTOP)
-   - On ajoute juste une marge-top pour écarter du haut.
------------------------------------------------------------------- */
+/* 3. SECTION HOME : dégradé bleu clair -> bleu foncé */
+#home {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4faaf4, #003a75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* 4. HEADER */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 60%;
-    background: rgba(20, 10, 30, 0.6);
-    padding: 15px 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-
-    /* la "petite" marge en haut de la page, 
-       tout en gardant la position absolue si tu veux (ou non) */
-    margin-top: 30px;
-    position: relative; /* ou absolute si tu y tiens, mais c'est plus simple en relative */
-    backdrop-filter: blur(8px); 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;         /* Ne touche pas les bords */
+  margin: 30px auto;  /* On centre horizontalement + marge en haut */
+  background: rgba(20, 10, 30, 0.3); /* léger fond transparent */
+  padding: 15px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  position: relative; /* plus simple qu’absolu */
 }
 
-/* Logo (desktop) */
+/* Logo */
 header img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
-/* ------------------------------------------------------------------
-   4. NAVIGATION (DESKTOP)
------------------------------------------------------------------- */
+/* NAV DESKTOP */
 .nav {
-    display: flex;
-    gap: 20px;
-    list-style: none;
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
-
 .nav li {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
-
 .nav li a {
-    text-decoration: none;
-    color: inherit; /* blanc hérité */
+  text-decoration: none;
+  color: inherit;
 }
-
 .nav li:hover {
-    color: #ff416c;
+  color: #ff416c;
 }
 
-/* ------------------------------------------------------------------
-   5. LANDING PAGE (DESKTOP)
-   - On la laisse en flux normal (position: static)
-     pour éviter un vide énorme.
------------------------------------------------------------------- */
+/* BOUTON BURGER (invisible en desktop) */
+.hamburger {
+  display: none; /* En desktop */
+}
+
+/* 5. PHOTO DE PROFIL (centrée, en rond) */
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 20px auto; /* centre horizontal + écart en haut/bas */
+}
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 6. LANDING-PAGE (texte centré) */
 .landing-page {
-    width: 60%; 
-    text-align: left;
-    margin-top: 50px;  /* espace après le header */
-    margin-bottom: 100px; /* un peu de marge avant la suite */
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  margin-top: 20px; /* petit espace sous la photo */
+  margin-bottom: 40px; 
 }
 
+/* TITRE PRINCIPAL */
 .big-title {
-    background: linear-gradient(45deg, #2c005b, #7c02ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    font-size: 30px;
-    margin-bottom: 40px;
-    max-width: 80%;
+  background: linear-gradient(45deg, #2c005b, #7c02ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
+/* DESCRIPTION */
 .little-title {
-    color: white;
-    font-weight: 300;
-    font-size: 20px;
-    margin-top: 20px;
-    max-width: 100%;
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  line-height: 1.4;
 }
 
-/* Bouton Scroll */
+/* BOUTON SCROLL */
 .discover-btn {
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    padding: 12px 24px;
-    margin-top: 50px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    display: inline-block;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 12px 24px;
+  margin-top: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: inline-block;
 }
 .discover-btn:hover {
-    background: linear-gradient(45deg, #2575fc, #6a11cb);
-    transform: scale(1.05);
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  transform: scale(1.05);
 }
 
-/* ------------------------------------------------------------------
-   6. SECTION SIDE PROJECTS (DESKTOP)
-   - On laisse la hauteur s'adapter (pas un 120vh fixe).
------------------------------------------------------------------- */
-.side-projects {
-    text-align: center;
-    padding: 80px 10%;
-    background: url("../img/fond_section_2.jpg") no-repeat center center;
-    background-size: cover;
-    width: 100%;
-    margin-top: 0; /* ou un petit 50px si tu veux un écart */
-    height: auto; 
+/* 7. SECTION SIDE-PROJECTS (dégradé inverse : bleu foncé -> bleu clair) */
+#side-projects {
+  width: 100%;
+  background: linear-gradient(135deg, #003a75, #4faaf4);
+  padding: 80px 10%;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .section-title {
-    font-size: 36px;
-    font-weight: bold;
-    background: linear-gradient(45deg, #7d6288, #bb00ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 40px;
+  font-size: 36px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #7d6288, #bb00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
 }
 
-/* Container en flex (desktop) */
+/* CONTAINER FLEX (DESKTOP) */
 .projects-container {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  width: 90%;
+  margin: 0 auto;
 }
 
-/* On augmente la hauteur pour "respirer" */
+/* BOXES + augmentation hauteur */
 .project-box {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    width: 30%;
-    height: 900px; /* anciennement 700px => plus grand */
-    border-radius: 20px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    backdrop-filter: blur(10px);
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  width: 30%;
+  height: 900px; /* plus grand qu'avant */
+  border-radius: 20px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
 }
-
 .project-box img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
 }
-
 .project-box h3 {
-    margin: 30px 0 20px;
-    font-size: 30px;
-    font-weight: bold;
+  margin: 30px 0 20px;
+  font-size: 30px;
+  font-weight: bold;
 }
-
 .project-box p {
-    font-size: 22px;
-    margin-bottom: 35px;
-    padding: 0 20px;
+  font-size: 22px;
+  margin-bottom: 35px;
+  padding: 0 20px;
 }
-
 .project-box .discover-btn {
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    border: none;
-    padding: 14px 35px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    position: absolute;
-    bottom: 30px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: absolute;
+  bottom: 30px;
 }
 .project-box .discover-btn:hover {
-    background: linear-gradient(45deg, #ff4b2b, #ff416c);
-    transform: scale(1.1);
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  transform: scale(1.1);
 }
 
-/* Animation hover + apparition */
+/* Hover + apparition */
 .project-box:hover {
-    transform: translateY(-20px) scale(1.12);
-    box-shadow: 0px 15px 35px rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-20px) scale(1.12);
+  box-shadow: 0px 15px 35px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
 }
 .project-box::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 70%);
-    transition: all 0.3s ease;
-    transform: rotate(30deg);
-    opacity: 0;
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 70%);
+  transition: all 0.3s ease;
+  transform: rotate(30deg);
+  opacity: 0;
 }
 .project-box:hover::before {
-    top: -30%;
-    left: -30%;
-    opacity: 1;
+  top: -30%;
+  left: -30%;
+  opacity: 1;
 }
 .project-box:hover h3,
 .project-box:hover p {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 .project-box {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .project-box.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ------------------------------------------------------------------
-   7. FOOTER
------------------------------------------------------------------- */
+/* 8. FOOTER (dégradé mauve/violet sombre) */
 .footer {
-    background: url("../img/pied_de_page_fond.jpg") no-repeat center center;
-    background-size: cover;
-    color: white;
-    padding: 40px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  background: linear-gradient(135deg, #4e2e70, #3e2160);
+  color: white;
+  padding: 40px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
 .footer-content {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .owner {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: left;
-    color: hsl(23, 100%, 50%);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  color: hsl(23, 100%, 50%);
 }
-
 .contact-section {
-    text-align: center;
+  text-align: center;
 }
-
 .contact-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 35px;
-    color: hsl(23, 100%, 50%);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  color: hsl(23, 100%, 50%);
 }
-
 .social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
 }
 .social-icon {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .social-icon img {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 .social-icon:hover {
-    color: hsl(23, 100%, 50%);
+  color: hsl(23, 100%, 50%);
 }
 .social-icon:hover img {
-    transform: scale(1.2);
-    opacity: 0.8;
+  transform: scale(1.2);
+  opacity: 0.8;
 }
 .rights {
-    font-size: 14px;
-    opacity: 0.8;
-    margin-top: 20px;
-    color: hsl(23, 100%, 50%);
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 20px;
+  color: hsl(23, 100%, 50%);
 }
 
-/* ------------------------------------------------------------------
-   8. ADAPTATION MOBILE
-   - (avec le menu burger, etc.)
-   - On ne bouge pas tout, juste l'essentiel
------------------------------------------------------------------- */
-
+/* 9. MEDIA QUERIES (mobile) */
 @media (max-width: 768px) {
-    /* Header + Hamburger 
-       => (reprends ce que tu avais avant si ça marchait mieux)
-    */
-    header {
-        width: 100%;
-        position: static;
-        margin-top: 20px; 
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .hamburger {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        margin-left: auto;
-        position: relative;
-        z-index: 1001;
-    }
-    .bar {
-        display: block;
-        width: 100%;
-        height: 4px;
-        margin: 6px 0;
-        background-color: #fff;
-        transition: 0.3s;
-    }
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(10px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg);
-    }
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 50%;
-        height: 100vh;
-        background-color: #001f3f;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        transition: right 0.3s ease;
-        z-index: 999;
-    }
-    .nav.nav-open {
-        right: 0;
-    }
-    .nav img {
-        display: none !important;
-    }
-    .nav li a {
-        color: #ffffff;
-        font-size: 18px;
-        text-decoration: none;
-    }
+  
+  /* BOUTON BURGER visible */
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    position: relative;
+    z-index: 1001;
+  }
+  .bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 6px 0;
+    background-color: #fff;
+    transition: 0.3s;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
 
-    /* Landing page full width */
-    .landing-page {
-        width: 90%;
-        margin-top: 30px;
-        margin-bottom: 50px;
-        text-align: center;
-        position: static;
-    }
-    .big-title {
-        font-size: 26px;
-        max-width: 100%;
-        margin-bottom: 15px;
-    }
-    .little-title {
-        font-size: 18px;
-        max-width: 100%;
-        margin-bottom: 25px;
-    }
-    .discover-btn {
-        margin-top: 10px;
-    }
+  /* NAV MENU SLIDE */
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100vh;
+    background-color: #001f3f;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+  .nav.nav-open {
+    right: 0;
+  }
 
-    /* Projects en colonne */
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-    .project-box {
-        width: 90%;
-        height: auto; /* tu peux mettre min-height: 900px si tu tiens absolument à une grande box */
-        padding-bottom: 60px; 
-    }
+  /* Landing page en 100% */
+  .landing-page {
+    width: 90%;
+    margin-top: 20px;
+  }
+  .big-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .little-title {
+    font-size: 16px;
+  }
+  .discover-btn {
+    margin-top: 15px;
+  }
+
+  /* Projects => colonne */
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .project-box {
+    width: 90%;
+    height: auto;
+    min-height: 700px; /* ou 900px si vous tenez à garder la grande taille */
+    padding-bottom: 60px; 
+  }
 }
