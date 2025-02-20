@@ -464,3 +464,48 @@ body {
         width: 40px;        
     }
 }
+
+
+
+/* Landing-page */
+
+@media (max-width: 768px) {
+    .landing-page {
+        position: static; /* On enlève la position absolue */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 90%; /* Augmente la largeur sur mobile */
+        min-height: auto; /* Permet une hauteur dynamique */
+        padding: 80px 20px 40px; /* Ajoute de l’espace */
+    }
+
+    .big-title {
+        font-size: 26px; /* Réduit la taille pour mobile */
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .little-title {
+        font-size: 18px;
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .profile-container {
+        position: static; /* Plus de position absolue */
+        transform: none;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile-picture {
+        width: 120px; /* Réduction de la taille */
+        height: 120px;
+    }
+}
+
+
+
