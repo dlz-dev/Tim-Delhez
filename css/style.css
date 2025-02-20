@@ -1,56 +1,53 @@
-/* 1. FONT & RESET */
+/* 1. REMISE À ZÉRO & POLICE */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 * {
+  margin: 0; padding: 0; box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
-/* 2. GLOBAL BODY (pas d’image, juste un fond uni) */
+/* 2. BODY : On ne met pas d'image, 
+      on laisse chaque section avoir son dégradé. */
 body {
-  /* On ne met pas de fond image global,
-     on laisse chaque section avoir son dégradé */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-/* 3. SECTION HOME : dégradé bleu clair -> bleu foncé */
+/* 3. SECTION #HOME : dégradé foncé -> plus foncé 
+   => ex: #1a1f2a -> #121520 
+*/
 #home {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #4faaf4, #003a75);
+  background: linear-gradient(135deg, #1a1f2a 0%, #121520 100%);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centre horizontalement */
   position: relative;
 }
 
-/* 4. HEADER */
+/* HEADER qui ne touche pas les bords : margin auto + width 90% */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;         /* Ne touche pas les bords */
-  margin: 30px auto;  /* On centre horizontalement + marge en haut */
-  background: rgba(20, 10, 30, 0.3); /* léger fond transparent */
+  width: 90%;
+  margin: 30px auto;   /* centre + marge en haut */
   padding: 15px 20px;
+  background: rgba(20, 10, 30, 0.3);
   border-radius: 20px;
   backdrop-filter: blur(8px);
-  position: relative; /* plus simple qu’absolu */
 }
 
-/* Logo */
+/* Logo (de base) */
 header img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 
-/* NAV DESKTOP */
+/* Navigation desktop */
 .nav {
   display: flex;
   gap: 20px;
@@ -71,18 +68,13 @@ header img {
   color: #ff416c;
 }
 
-/* BOUTON BURGER (invisible en desktop) */
-.hamburger {
-  display: none; /* En desktop */
-}
-
-/* 5. PHOTO DE PROFIL (centrée, en rond) */
+/* Photo de profil */
 .profile-photo {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 20px auto; /* centre horizontal + écart en haut/bas */
+  margin-top: 20px;    /* écart sous le header */
 }
 .profile-photo img {
   width: 100%;
@@ -90,16 +82,15 @@ header img {
   object-fit: cover;
 }
 
-/* 6. LANDING-PAGE (texte centré) */
+/* Contenu landing page (nom, description, bouton) */
 .landing-page {
   width: 90%;
   max-width: 1000px;
+  margin: 30px auto 50px auto; /* un peu d'espace en bas pour le bouton */
   text-align: center;
-  margin-top: 20px; /* petit espace sous la photo */
-  margin-bottom: 40px; 
 }
 
-/* TITRE PRINCIPAL */
+/* Titre principal */
 .big-title {
   background: linear-gradient(45deg, #2c005b, #7c02ff);
   -webkit-background-clip: text;
@@ -109,17 +100,17 @@ header img {
   margin-bottom: 20px;
 }
 
-/* DESCRIPTION */
+/* Description - Pas de overflow ni max-height => s'affiche librement */
 .little-title {
-  color: white;
+  color: #ccc;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.6;
   max-width: 100%;
   margin: 0 auto;
-  line-height: 1.4;
 }
 
-/* BOUTON SCROLL */
+/* Bouton Scroll : en bas de la landing-page avec marge */
 .discover-btn {
   background: linear-gradient(45deg, #6a11cb, #2575fc);
   color: white;
@@ -127,7 +118,7 @@ header img {
   font-weight: bold;
   border: none;
   padding: 12px 24px;
-  margin-top: 30px;
+  margin-top: 40px; /* On l'écarte un peu du texte */
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s ease;
@@ -138,15 +129,19 @@ header img {
   transform: scale(1.05);
 }
 
-/* 7. SECTION SIDE-PROJECTS (dégradé inverse : bleu foncé -> bleu clair) */
+/* 4. SECTION #SIDE-PROJECTS 
+   On reprend la couleur finale (#121520) de #home en dégradé
+   vers un ton encore plus sombre #0C0E13
+*/
 #side-projects {
   width: 100%;
-  background: linear-gradient(135deg, #003a75, #4faaf4);
+  background: linear-gradient(135deg, #121520 0%, #0C0E13 100%);
   padding: 80px 10%;
   box-sizing: border-box;
   text-align: center;
 }
 
+/* Titre de la section */
 .section-title {
   font-size: 36px;
   font-weight: bold;
@@ -156,7 +151,7 @@ header img {
   margin-bottom: 40px;
 }
 
-/* CONTAINER FLEX (DESKTOP) */
+/* Container flex (desktop) */
 .projects-container {
   display: flex;
   justify-content: center;
@@ -165,17 +160,17 @@ header img {
   margin: 0 auto;
 }
 
-/* BOXES + augmentation hauteur */
+/* Boxes side-projects (plus hautes, etc.) */
 .project-box {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   padding: 40px;
   width: 30%;
-  height: 900px; /* plus grand qu'avant */
+  height: 800px; /* plus haut que 700px si besoin */
   border-radius: 20px;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   backdrop-filter: blur(10px);
-  color: white;
+  color: #fff;
   font-size: 22px;
   cursor: pointer;
   position: relative;
@@ -198,7 +193,7 @@ header img {
   font-weight: bold;
 }
 .project-box p {
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 35px;
   padding: 0 20px;
 }
@@ -219,12 +214,11 @@ header img {
   background: linear-gradient(45deg, #ff4b2b, #ff416c);
   transform: scale(1.1);
 }
-
 /* Hover + apparition */
 .project-box:hover {
   transform: translateY(-20px) scale(1.12);
   box-shadow: 0px 15px 35px rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
 }
 .project-box::before {
   content: "";
@@ -258,10 +252,10 @@ header img {
   transform: translateY(0);
 }
 
-/* 8. FOOTER (dégradé mauve/violet sombre) */
+/* 5. FOOTER : on part de #0C0E13 vers un mauve/bleu très sombre (#1a1030) */
 .footer {
   width: 100%;
-  background: linear-gradient(135deg, #4e2e70, #3e2160);
+  background: linear-gradient(135deg, #0C0E13 0%, #1a1030 100%);
   color: white;
   padding: 40px 10%;
   display: flex;
@@ -323,10 +317,10 @@ header img {
   color: hsl(23, 100%, 50%);
 }
 
-/* 9. MEDIA QUERIES (mobile) */
+/* 6. MEDIA QUERIES (MOBILE) */
 @media (max-width: 768px) {
   
-  /* BOUTON BURGER visible */
+  /* BOUTON BURGER */
   .hamburger {
     display: block;
     background: none;
@@ -356,7 +350,6 @@ header img {
     transform: translateY(-10px) rotate(-45deg);
   }
 
-  /* NAV MENU SLIDE */
   .nav {
     position: fixed;
     top: 0;
@@ -369,7 +362,7 @@ header img {
     align-items: center;
     gap: 20px;
     list-style: none;
-    margin: 0;
+    margin: 0; 
     padding: 0;
     transition: right 0.3s ease;
     z-index: 999;
@@ -378,10 +371,10 @@ header img {
     right: 0;
   }
 
-  /* Landing page en 100% */
+  /* Landing page */
   .landing-page {
     width: 90%;
-    margin-top: 20px;
+    margin: 30px auto 50px auto;
   }
   .big-title {
     font-size: 24px;
@@ -391,7 +384,7 @@ header img {
     font-size: 16px;
   }
   .discover-btn {
-    margin-top: 15px;
+    margin-top: 20px;
   }
 
   /* Projects => colonne */
@@ -403,7 +396,7 @@ header img {
   .project-box {
     width: 90%;
     height: auto;
-    min-height: 700px; /* ou 900px si vous tenez à garder la grande taille */
-    padding-bottom: 60px; 
+    min-height: 600px; /* un peu moins grand si on veut */
+    margin: 0 auto;
   }
 }
