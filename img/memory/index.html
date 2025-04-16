@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoDLZ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Création du header... -->
+    <header>
+
+        <h1>MemoDLZ - Jeu Du Mémory</h1>
+        <p>Le Jeu Qui Teste Ta Mémoire !</p>
+
+    </header>
+
+    <!-- Création du main... -->
+    <div class="page">
+        <main>
+
+            <section id="infos">
+
+                <div class="contenu-infos">
+                    <div id="chrono">
+                        <img src="img/time.png" alt="" class="icone-chrono">
+                        <div class="text-chrono">
+                            <p> <strong>Temps restant :</strong> <span id="tempsrestant">60</span> s</p>
+                            <p> <strong>Temps écoulé :</strong> <span id="tempsecoule">0</span> s</p>
+                        </div>
+                    </div>
+
+                <!-- Div sur les statistiques du jeu... -->
+                    <div id="statistiques">
+                        <img src="img/stats.png" alt="" class="icone-stats">
+                        <div class="text-stat">
+                            <p> <strong>Paires trouvées :</strong> <span id="pairetrouvees">0</span></p>
+                            <p> <strong>Paires restantes :</strong> <span id="pairesrestantes">8</span></p>
+                            <p> <strong>Cartes retournées :</strong> <span id="retournees">0</span></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Création d'un bouton afin de commencer une nouvelle partie de jeu... -->
+                <button id="startbtn">Commencer la partie !</button>
+                <button id="rejouerbtn" style="display: none;">Rejouer</button>
+
+            </section>
+
+            <!-- Création de la section principale, les cartes en 4 x 4... -->
+            <section id="plateau">
+                
+            </section>
+
+            <!-- Création de la section située a droite, cartes trouvées... -->
+            <section id="cartes-trouvees">
+                <h2>Cartes trouvées</h2>
+                <div id="zone-cartes-trouvees" class="contenu-infos"></div>
+            </section>
+            
+            
+
+        </main>
+
+        <!-- Création du footer... -->
+        <footer>
+            <p>&copy; 2025 - DlzTeam - Tous droits réservés.</p>
+        </footer>
+    </div>
+</body>
+</html>
