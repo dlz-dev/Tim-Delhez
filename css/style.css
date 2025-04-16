@@ -461,3 +461,14 @@ header img {
 .big-title:hover {
   animation: neon-pulse 1.5s infinite alternate;
 }
+
+
+
+
+
+
+/* SIDE PROJECTS */
+
+.text-project1 {
+  color: orangered;
+}
